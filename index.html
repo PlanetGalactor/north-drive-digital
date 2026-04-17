@@ -38,6 +38,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-body);
             color: var(--text-primary);
@@ -45,6 +49,28 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Premium noise overlay */
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Scroll reveal animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         a {
@@ -763,6 +789,7 @@
     </style>
 </head>
 <body>
+    <div class="noise-overlay"></div>
 
     <!-- SECTION 1: HERO -->
     <header id="hero">
@@ -774,9 +801,9 @@
                 <a href="#services">Services</a>
                 <a href="#process">About</a>
             </div>
-            <a href="#quote" class="cta-button">Get a Free Quote</a>
+            <a href="#quote" class="cta-button">Get in Touch</a>
         </nav>
-        <div class="hero-content">
+        <div class="hero-content fade-up">
             <h1 class="hero-headline">NORTH<br>DRIVE<br>DIGITAL</h1>
             <span class="hero-tagline">Built to be seen.</span>
             <a href="#quote" class="cta-button">Get a Free Quote</a>
@@ -784,7 +811,9 @@
     </header>
 
     <!-- SECTION 2: CLIENT LOGO STRIP -->
-    <section id="logo-strip">
+    <section id="logo-strip" class="fade-up">
+
+... truncated ... (Wait, I cannot truncate inside replacement. I need exact match chunk).
         <div class="client-logo"><img src="" alt="Collector Casing Logo"></div>
         <div class="client-logo"><img src="" alt="Whitecroft Partners Logo"></div>
         <div class="client-logo"><img src="" alt="BHRA Logo"></div>
@@ -796,10 +825,10 @@
 
     <!-- SECTION 3: PROBLEM STATEMENT -->
     <section id="problem">
-        <div class="problem-headline">
+        <div class="problem-headline fade-up">
             YOUR NEXT CUSTOMER IS SEARCHING. ARE THEY FINDING YOU?
         </div>
-        <div class="problem-text">
+        <div class="problem-text fade-up" style="transition-delay: 0.1s;">
             <p>Most local businesses either don't have a website, or have one that's costing them customers. A bad first impression online is usually the last one.</p>
             <p>Your competitors are getting found. Your customers are searching. Right now, you might not be showing up at all.</p>
             <p>That's what we fix.</p>
@@ -808,12 +837,12 @@
 
     <!-- SECTION 4: WHAT WE DO -->
     <section id="services">
-        <div class="section-header">
+        <div class="section-header fade-up">
             <span class="small-label">Our Services</span>
             <h2 class="large-title">WHAT WE DO</h2>
         </div>
         
-        <div class="services-grid">
+        <div class="services-grid fade-up" style="transition-delay: 0.1s;">
             <!-- Card 01 -->
             <div class="service-card">
                 <span class="service-num">01</span>
@@ -937,12 +966,12 @@
 
     <!-- SECTION 5: HOW IT WORKS -->
     <section id="process">
-        <div class="section-header">
+        <div class="section-header fade-up">
             <span class="small-label">Our Process</span>
             <h2 class="large-title">HOW IT WORKS</h2>
         </div>
         
-        <div class="process-grid">
+        <div class="process-grid fade-up" style="transition-delay: 0.1s;">
             <div class="process-step">
                 <div class="step-ghost">1</div>
                 <div class="step-dot"></div>
@@ -975,19 +1004,19 @@
 
     <!-- SECTION 6: OUR WORK -->
     <section id="portfolio">
-        <div class="section-header">
+        <div class="section-header fade-up">
             <span class="small-label">Selected Work</span>
             <h2 class="large-title">OUR WORK</h2>
         </div>
         
-        <div class="filters">
+        <div class="filters fade-up" style="transition-delay: 0.1s;">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="website">Websites</button>
             <button class="filter-btn" data-filter="branding">Branding</button>
             <button class="filter-btn" data-filter="full">Full Package</button>
         </div>
         
-        <div class="portfolio-grid" id="portfolio-grid">
+        <div class="portfolio-grid fade-up" style="transition-delay: 0.2s;" id="portfolio-grid">
             <!-- Item 1 -->
             <div class="portfolio-item" data-cat="full">
                 <div class="pt-client pt-placeholder-text">Northern Elite</div>
@@ -1082,10 +1111,10 @@
 
     <!-- SECTION 7: CTA / QUOTE FORM -->
     <section id="quote">
-        <h2 class="cta-headline">READY TO GET SEEN?</h2>
-        <p class="cta-subtext">Tell us about your business and we'll put together a free quote. Most of our clients are live within 4 weeks.</p>
+        <h2 class="cta-headline fade-up">READY TO GET SEEN?</h2>
+        <p class="cta-subtext fade-up" style="transition-delay: 0.1s;">Tell us about your business and we'll put together a free quote. Most of our clients are live within 4 weeks.</p>
         
-        <form class="quote-form">
+        <form class="quote-form fade-up" style="transition-delay: 0.2s;">
             <div class="form-row">
                 <input type="text" class="form-input" placeholder="Your Name" required>
                 <input type="text" class="form-input" placeholder="Business Name" required>
@@ -1163,6 +1192,26 @@
                     // Reapply layout class
                     applySpanToFirstVisible();
                 });
+            });
+
+            // Intersection Observer for fade-up animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach(el => {
+                observer.observe(el);
             });
         });
     </script>
