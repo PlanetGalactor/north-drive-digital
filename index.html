@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North Drive Digital | Built to be seen.</title>
+    <meta name="description" content="Toronto-based web design and branding agency for local businesses.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --bg-body: #0a0a0a;
+            --bg-alt: #080c08;
+            --bg-card: #0a0d0a;
+            --bg-logo: #0c0f0c;
+            --bg-cta: #060906;
+            --bg-footer: #040704;
+            --bg-placeholder: #0f130f;
+            --bg-placeholder-hover: #141a14;
+            --text-primary: #F5F5F0;
+            --border-color: rgba(245, 245, 240, 0.06);
+            --border-color-light: rgba(245, 245, 240, 0.07);
+            
+            --font-head: 'Bebas Neue', sans-serif;
+            --font-body: 'Raleway', sans-serif;
+            --font-accent: 'Playfair Display', serif;
+        }
+
+        /* Global Resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- SECTION 1: HERO --- */
+        #hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 700px;
+            background: url("https://images.pexels.com/photos/17989682/pexels-photo-17989682.jpeg?auto=compress&cs=tinysrgb&w=1920") center/cover no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(4,8,4,0.96) 0%, rgba(4,8,4,0) 28%),
+                        linear-gradient(0deg, rgba(8,12,8,0.97) 0%, rgba(8,12,8,0.5) 45%, rgba(8,12,8,0) 72%);
+            z-index: 1;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 32px 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .nav-logo {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #ffffff;
+            transition: opacity 0.2s;
+        }
+        
+        .nav-links auto:hover {
+            opacity: 0.7;
+        }
+
+        .cta-button {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 600;
+            background: transparent;
+            border: 1px solid rgba(245,245,240,0.8);
+            color: #ffffff;
+            padding: 11px 24px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ffffff;
+            color: #060906;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 0 64px 80px 64px;
+            z-index: 10;
+        }
+
+        .hero-headline {
+            font-family: var(--font-head);
+            font-size: clamp(80px, 14vw, 180px);
+            line-height: 0.88;
+            letter-spacing: 0.02em;
+            color: #ffffff;
+            white-space: pre-line;
+        }
+
+        .hero-tagline {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: rgba(245,245,240,0.45);
+            margin-top: 20px;
+            display: block;
+        }
+
+        #hero .cta-button {
+            margin-top: 36px;
+            display: inline-block;
+        }
+
+        /* --- SECTION 2: CLIENT LOGO STRIP --- */
+        #logo-strip {
+            background-color: var(--bg-logo);
+            padding: 36px 64px;
+            border-bottom: 0.5px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .client-logo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .client-logo:hover {
+            opacity: 0.8;
+        }
+
+        .client-logo img {
+            width: 100%;
+            max-height: 36px;
+            object-fit: contain;
+        }
+
+        /* --- SECTION 3: PROBLEM STATEMENT --- */
+        #problem {
+            background-color: var(--bg-alt);
+            padding: 100px 64px;
+            border-bottom: 0.5px solid rgba(245,245,240,0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .problem-headline {
+            font-family: var(--font-head);
+            font-size: clamp(40px, 5.5vw, 72px);
+            line-height: 0.95;
+            letter-spacing: 0.03em;
+            color: #ffffff;
+        }
+
+        .problem-text p {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            color: rgba(245,245,240,0.5);
+            line-height: 1.85;
+            margin-top: 20px;
+        }
+        
+        .problem-text p:first-child {
+            margin-top: 0;
+        }
+
+        /* --- SECTION 4: WHAT WE DO --- */
+        .section-header {
+            margin-bottom: 52px;
+        }
+
+        .small-label {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(245,245,240,0.25);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .large-title {
+            font-family: var(--font-head);
+            font-size: clamp(52px, 6vw, 80px);
+            line-height: 0.95;
+            letter-spacing: 0.03em;
+            color: #ffffff;
+        }
+
+        #services {
+            background-color: var(--bg-card);
+            padding: 100px 64px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1px;
+            background-color: var(--border-color-light);
+            border: 0.5px solid var(--border-color-light);
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-num {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 400;
+            color: rgba(245,245,240,0.2);
+            letter-spacing: 0.15em;
+            margin-bottom: 14px;
+        }
+
+        .service-name {
+            font-family: var(--font-head);
+            font-size: 28px;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .service-desc {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            color: rgba(245,245,240,0.45);
+            line-height: 1.8;
+            margin-bottom: 28px;
+            flex-grow: 1;
+        }
+
+        .service-visual {
+            border-top: 0.5px solid rgba(245,245,240,0.06);
+            margin-top: auto;
+            padding-top: 24px;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Visuals inner styling */
+        .visual-wireframe {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .visual-typography {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .typo-main { font-family: var(--font-head); font-size: 48px; color: rgba(245,245,240,0.12); line-height: 1; }
+        .typo-sub { font-family: var(--font-body); font-size: 13px; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,245,240,0.18); margin-top: 4px; margin-bottom: 16px;}
+        .swatches { display: flex; gap: 8px; }
+        .swatch { width: 16px; height: 16px; border-radius: 50%; }
+
+        .visual-icons {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            align-items: center;
+            height: 100%;
+        }
+        .icon-item { text-align: center; }
+        .icon-svg { width: 32px; height: 32px; stroke: #F5F5F0; stroke-width: 1.2; opacity: 0.18; fill: none; margin-bottom: 8px;}
+        .icon-label { font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,245,240,0.2); }
+
+        .visual-uptime {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .uptime-header { display: flex; justify-content: space-between; align-items: center;}
+        .uptime-label { font-family: var(--font-body); font-size: 10px; color: rgba(245,245,240,0.3); }
+        .uptime-status { font-family: var(--font-body); font-size: 10px; color: rgba(120,200,120,0.4); }
+        .uptime-graph { flex-grow: 1; display: flex; align-items: center; }
+        .uptime-stats { display: flex; justify-content: space-between; }
+        .stat-item { text-align: left; }
+        .stat-val { font-family: var(--font-head); font-size: 16px; color: rgba(245,245,240,0.15); }
+        .stat-lbl { font-family: var(--font-body); font-size: 8px; color: rgba(245,245,240,0.2); text-transform: uppercase; letter-spacing: 0.1em;}
+
+        /* --- SECTION 5: HOW IT WORKS --- */
+        #process {
+            background-color: var(--bg-alt);
+            padding: 100px 64px;
+            border-top: 0.5px solid rgba(245,245,240,0.04);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background-color: rgba(245,245,240,0.06);
+            border: 0.5px solid rgba(245,245,240,0.06);
+        }
+
+        .process-step {
+            background-color: var(--bg-alt);
+            padding: 52px 48px;
+            position: relative;
+        }
+
+        .step-ghost {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            font-family: var(--font-head);
+            font-size: 96px;
+            color: rgba(245,245,240,0.05);
+            line-height: 0.8;
+        }
+
+        .step-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: rgba(245,245,240,0.25);
+            margin-bottom: 20px;
+        }
+
+        .step-title {
+            font-family: var(--font-head);
+            font-size: 34px;
+            letter-spacing: 0.04em;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .step-desc {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            color: rgba(245,245,240,0.55);
+            line-height: 1.85;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- SECTION 6: OUR WORK --- */
+        #portfolio {
+            background-color: var(--bg-card);
+            padding: 100px 64px;
+            border-top: 0.5px solid rgba(245,245,240,0.05);
+        }
+
+        .filters {
+            display: flex;
+            gap: 8px;
+            margin-top: 24px;
+            margin-bottom: 32px;
+        }
+
+        .filter-btn {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: transparent;
+            border: 0.5px solid rgba(245,245,240,0.15);
+            padding: 8px 20px;
+            color: rgba(245,245,240,0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            color: #F5F5F0;
+            border-color: rgba(245,245,240,0.4);
+        }
+
+        .filter-btn.active {
+            color: #F5F5F0;
+            border-color: #F5F5F0;
+            background-color: rgba(245,245,240,0.05);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background-color: var(--border-color);
+            border: 0.5px solid var(--border-color);
+        }
+
+        .portfolio-item {
+            background-color: var(--bg-placeholder);
+            aspect-ratio: 4/3;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 0.5px solid rgba(245,245,240,0.06);
+            transition: background-color 0.3s ease;
+        }
+        
+        .portfolio-item.span-2 {
+            grid-column: span 2;
+        }
+
+        .pt-placeholder-text {
+            font-family: var(--font-head);
+            font-size: 18px;
+            color: rgba(245,245,240,0.2);
+            margin-bottom: 8px;
+        }
+
+        .pt-add-screenshot {
+            font-family: var(--font-body);
+            font-size: 10px;
+            color: rgba(245,245,240,0.12);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(8,12,8,0);
+            display: flex;
+            align-items: flex-end;
+            padding: 32px;
+            transition: background-color 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            background-color: rgba(8,12,8,0.75);
+        }
+
+        .portfolio-info {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pt-client {
+            font-family: var(--font-head);
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .pt-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .pt-tag {
+            font-family: var(--font-body);
+            font-size: 9px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 4px 10px;
+            border: 0.5px solid rgba(245,245,240,0.2);
+            border-radius: 12px;
+            color: rgba(245,245,240,0.6);
+        }
+
+        .pt-outcome {
+            font-family: var(--font-body);
+            font-size: 11px;
+            color: rgba(245,245,240,0.5);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* --- SECTION 7: CTA --- */
+        #quote {
+            background-color: var(--bg-cta);
+            padding: 120px 64px;
+            text-align: center;
+            border-top: 0.5px solid rgba(245,245,240,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cta-headline {
+            font-family: var(--font-head);
+            font-size: clamp(48px, 8vw, 100px);
+            line-height: 0.92;
+            letter-spacing: 0.03em;
+            color: #ffffff;
+            max-width: 800px;
+        }
+
+        .cta-subtext {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: rgba(245,245,240,0.45);
+            max-width: 480px;
+            margin-top: 28px;
+            line-height: 1.85;
+        }
+
+        .quote-form {
+            max-width: 560px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 52px;
+        }
+
+        .form-row {
+            display: flex;
+            width: 100%;
+            gap: 16px;
+        }
+
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: 0.5px solid rgba(245,245,240,0.2);
+            padding: 16px 20px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            color: #F5F5F0;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-input::placeholder {
+            color: rgba(245,245,240,0.25);
+        }
+
+        .form-input:focus {
+            border-color: rgba(245,245,240,0.6);
+        }
+
+        select.form-input {
+            appearance: none;
+            cursor: pointer;
+            color: rgba(245,245,240,0.8);
+        }
+        
+        select.form-input option {
+            background-color: var(--bg-cta);
+            color: #F5F5F0;
+        }
+
+        .submit-btn {
+            background: transparent;
+            color: #F5F5F0;
+            border: 1px solid rgba(245,245,240,0.6);
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 18px 40px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            margin-top: 8px;
+        }
+
+        .submit-btn:hover {
+            background-color: #F5F5F0;
+            color: #060906;
+            border-color: #F5F5F0;
+        }
+
+        .form-note {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: rgba(245,245,240,0.22);
+            text-transform: uppercase;
+            margin-top: 8px;
+        }
+
+        /* --- SECTION 8: FOOTER --- */
+        footer {
+            background-color: var(--bg-footer);
+            padding: 40px 64px;
+            border-top: 0.5px solid rgba(245,245,240,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(245,245,240,0.3);
+        }
+
+        .footer-copy {
+            font-family: var(--font-body);
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: rgba(245,245,240,0.2);
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 768px) {
+            nav {
+                padding: 24px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero-content {
+                padding: 0 24px 60px 24px;
+            }
+            
+            #logo-strip {
+                padding: 28px 24px;
+                flex-wrap: wrap;
+            }
+            .client-logo {
+                flex: 1 1 calc(33% - 10px);
+                max-height: 24px;
+            }
+            
+            #problem {
+                grid-template-columns: 1fr;
+                padding: 64px 24px;
+                gap: 32px;
+            }
+            
+            #services {
+                padding: 64px 24px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #process {
+                padding: 64px 24px;
+            }
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-step {
+                padding: 36px 28px;
+            }
+            .step-ghost {
+                font-size: 64px;
+                top: 24px;
+                right: 24px;
+            }
+
+            #portfolio {
+                padding: 64px 24px;
+            }
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .portfolio-item.span-2 {
+                grid-column: span 2;
+            }
+            
+            #quote {
+                padding: 80px 24px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            footer {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION 1: HERO -->
+    <header id="hero">
+        <div class="hero-overlay"></div>
+        <nav>
+            <div class="nav-logo">North Drive Digital</div>
+            <div class="nav-links">
+                <a href="#portfolio">Work</a>
+                <a href="#services">Services</a>
+                <a href="#process">About</a>
+            </div>
+            <a href="#quote" class="cta-button">Get a Free Quote</a>
+        </nav>
+        <div class="hero-content">
+            <h1 class="hero-headline">NORTH<br>DRIVE<br>DIGITAL</h1>
+            <span class="hero-tagline">Built to be seen.</span>
+            <a href="#quote" class="cta-button">Get a Free Quote</a>
+        </div>
+    </header>
+
+    <!-- SECTION 2: CLIENT LOGO STRIP -->
+    <section id="logo-strip">
+        <div class="client-logo"><img src="" alt="Collector Casing Logo"></div>
+        <div class="client-logo"><img src="" alt="Whitecroft Partners Logo"></div>
+        <div class="client-logo"><img src="" alt="BHRA Logo"></div>
+        <div class="client-logo"><img src="" alt="Menkes Logo"></div>
+        <div class="client-logo"><img src="" alt="Northern Elite Logo"></div>
+        <div class="client-logo"><img src="" alt="Chartwell Logo"></div>
+        <div class="client-logo"><img src="" alt="Forge Group Logo"></div>
+    </section>
+
+    <!-- SECTION 3: PROBLEM STATEMENT -->
+    <section id="problem">
+        <div class="problem-headline">
+            YOUR NEXT CUSTOMER IS SEARCHING. ARE THEY FINDING YOU?
+        </div>
+        <div class="problem-text">
+            <p>Most local businesses either don't have a website, or have one that's costing them customers. A bad first impression online is usually the last one.</p>
+            <p>Your competitors are getting found. Your customers are searching. Right now, you might not be showing up at all.</p>
+            <p>That's what we fix.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 4: WHAT WE DO -->
+    <section id="services">
+        <div class="section-header">
+            <span class="small-label">Our Services</span>
+            <h2 class="large-title">WHAT WE DO</h2>
+        </div>
+        
+        <div class="services-grid">
+            <!-- Card 01 -->
+            <div class="service-card">
+                <span class="service-num">01</span>
+                <h3 class="service-name">Web Design & Development</h3>
+                <p class="service-desc">Custom websites built for local businesses. We take care of everything from the first conversation to the day you go live.</p>
+                <div class="service-visual">
+                    <svg class="visual-wireframe" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Nav bar -->
+                        <rect x="0" y="0" width="200" height="15" fill="rgba(245,245,240,0.06)" />
+                        <circle cx="8" cy="7.5" r="2" fill="rgba(245,245,240,0.12)" />
+                        <circle cx="15" cy="7.5" r="2" fill="rgba(245,245,240,0.12)" />
+                        <circle cx="22" cy="7.5" r="2" fill="rgba(245,245,240,0.12)" />
+                        <rect x="40" y="4" width="120" height="7" rx="3" fill="rgba(245,245,240,0.04)" />
+                        <!-- Hero block -->
+                        <rect x="0" y="20" width="200" height="40" fill="rgba(245,245,240,0.08)" />
+                        <!-- Content rows -->
+                        <rect x="10" y="65" width="80" height="10" fill="rgba(245,245,240,0.05)" />
+                        <rect x="100" y="65" width="90" height="10" fill="rgba(245,245,240,0.05)" />
+                        <!-- Columns -->
+                        <rect x="10" y="80" width="55" height="30" fill="rgba(245,245,240,0.06)" />
+                        <rect x="72.5" y="80" width="55" height="30" fill="rgba(245,245,240,0.06)" />
+                        <rect x="135" y="80" width="55" height="30" fill="rgba(245,245,240,0.06)" />
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Card 02 -->
+            <div class="service-card">
+                <span class="service-num">02</span>
+                <h3 class="service-name">Branding</h3>
+                <p class="service-desc">Logo, typography, colour palette, brand voice and social assets. Everything packaged into a brand kit your whole business can actually use.</p>
+                <div class="service-visual">
+                    <div class="visual-typography">
+                        <div class="typo-main">Aa Bb</div>
+                        <div class="typo-sub">Typography & Identity</div>
+                        <div class="swatches">
+                            <div class="swatch" style="background: rgba(245,245,240,1);"></div>
+                            <div class="swatch" style="background: rgba(245,245,240,0.7);"></div>
+                            <div class="swatch" style="background: rgba(245,245,240,0.4);"></div>
+                            <div class="swatch" style="background: rgba(200,210,200,0.3);"></div>
+                            <div class="swatch" style="background: rgba(180,185,180,0.2);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 03 -->
+            <div class="service-card">
+                <span class="service-num">03</span>
+                <h3 class="service-name">Digital Setup</h3>
+                <p class="service-desc">Domain, hosting, security setup and everything that comes with it. We get you organized online properly, not just quickly.</p>
+                <div class="service-visual">
+                    <div class="visual-icons">
+                        <div class="icon-item">
+                            <!-- Globe Icon -->
+                            <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M2 12h20"></path>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            <div class="icon-label">Domain</div>
+                        </div>
+                        <div class="icon-item">
+                            <!-- Server Icon -->
+                            <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                            </svg>
+                            <div class="icon-label">Hosting</div>
+                        </div>
+                        <div class="icon-item">
+                            <!-- Padlock Icon -->
+                            <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <div class="icon-label">Security</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 04 -->
+            <div class="service-card">
+                <span class="service-num">04</span>
+                <h3 class="service-name">Ongoing Support</h3>
+                <p class="service-desc">Monthly maintenance that covers security monitoring, daily backups, uptime protection, content updates, blog posts and promotions. Your site stays current and your business stays online. You don't have to touch a thing.</p>
+                <div class="service-visual">
+                    <div class="visual-uptime">
+                        <div class="uptime-header">
+                            <span class="uptime-label">System Status</span>
+                            <span class="uptime-status">● Online</span>
+                        </div>
+                        <div class="uptime-graph">
+                            <svg width="100%" height="40" viewBox="0 0 200 40" preserveAspectRatio="none">
+                                <polyline points="0,20 40,20 45,5 50,35 55,20 150,20 155,10 160,30 165,20 200,20" fill="none" stroke="rgba(120,200,120,0.4)" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <div class="uptime-stats">
+                            <div class="stat-item">
+                                <div class="stat-val">99.9%</div>
+                                <div class="stat-lbl">Uptime</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-val">24H</div>
+                                <div class="stat-lbl">Response</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-val">Daily</div>
+                                <div class="stat-lbl">Backups</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- SECTION 5: HOW IT WORKS -->
+    <section id="process">
+        <div class="section-header">
+            <span class="small-label">Our Process</span>
+            <h2 class="large-title">HOW IT WORKS</h2>
+        </div>
+        
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-ghost">1</div>
+                <div class="step-dot"></div>
+                <h3 class="step-title">Tell Us Your Vision</h3>
+                <p class="step-desc">A quick call is all it takes. You tell us what your business needs and where you want to go. We take it from there.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-ghost">2</div>
+                <div class="step-dot"></div>
+                <h3 class="step-title">We Build Your Brand</h3>
+                <p class="step-desc">Before we touch the website, we get your brand right. Logo, colours, typography, tone of voice. Everything locked into a kit that guides the whole build.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-ghost">3</div>
+                <div class="step-dot"></div>
+                <h3 class="step-title">We Build Your Website</h3>
+                <p class="step-desc">With your brand sorted, we build your site. You review it, request any changes, and when you're happy we launch it.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-ghost">4</div>
+                <div class="step-dot"></div>
+                <h3 class="step-title">We Keep It Running</h3>
+                <p class="step-desc">You're not left to figure it out after launch. We stay on, handle the maintenance, and keep things running so you can focus on your business.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: OUR WORK -->
+    <section id="portfolio">
+        <div class="section-header">
+            <span class="small-label">Selected Work</span>
+            <h2 class="large-title">OUR WORK</h2>
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="website">Websites</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+            <button class="filter-btn" data-filter="full">Full Package</button>
+        </div>
+        
+        <div class="portfolio-grid" id="portfolio-grid">
+            <!-- Item 1 -->
+            <div class="portfolio-item" data-cat="full">
+                <div class="pt-client pt-placeholder-text">Northern Elite</div>
+                <div class="pt-add-screenshot">Add screenshot</div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <div class="pt-client">Northern Elite</div>
+                        <div class="pt-tags">
+                            <span class="pt-tag">Full Package</span>
+                        </div>
+                        <div class="pt-outcome">Brand identity & full website</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="portfolio-item" data-cat="website">
+                <div class="pt-client pt-placeholder-text">BHRA</div>
+                <div class="pt-add-screenshot">Add screenshot</div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <div class="pt-client">BHRA</div>
+                        <div class="pt-tags">
+                            <span class="pt-tag">Website</span>
+                        </div>
+                        <div class="pt-outcome">Community website</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="portfolio-item" data-cat="full">
+                <div class="pt-client pt-placeholder-text">Collector Casing</div>
+                <div class="pt-add-screenshot">Add screenshot</div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <div class="pt-client">Collector Casing</div>
+                        <div class="pt-tags">
+                            <span class="pt-tag">Full Package</span>
+                        </div>
+                        <div class="pt-outcome">E-commerce & branding</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="portfolio-item" data-cat="branding">
+                <div class="pt-client pt-placeholder-text">Whitecroft Partners</div>
+                <div class="pt-add-screenshot">Add screenshot</div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <div class="pt-client">Whitecroft Partners</div>
+                        <div class="pt-tags">
+                            <span class="pt-tag">Branding</span>
+                        </div>
+                        <div class="pt-outcome">Brand identity & guidelines</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 5 -->
+            <div class="portfolio-item" data-cat="website">
+                <div class="pt-client pt-placeholder-text">Menkes</div>
+                <div class="pt-add-screenshot">Add screenshot</div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <div class="pt-client">Menkes</div>
+                        <div class="pt-tags">
+                            <span class="pt-tag">Website</span>
+                        </div>
+                        <div class="pt-outcome">Web design & development</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 6 -->
+            <div class="portfolio-item" data-cat="website">
+                <div class="pt-client pt-placeholder-text">Forge Group</div>
+                <div class="pt-add-screenshot">Add screenshot</div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <div class="pt-client">Forge Group</div>
+                        <div class="pt-tags">
+                            <span class="pt-tag">Website</span>
+                        </div>
+                        <div class="pt-outcome">Web design & development</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: CTA / QUOTE FORM -->
+    <section id="quote">
+        <h2 class="cta-headline">READY TO GET SEEN?</h2>
+        <p class="cta-subtext">Tell us about your business and we'll put together a free quote. Most of our clients are live within 4 weeks.</p>
+        
+        <form class="quote-form">
+            <div class="form-row">
+                <input type="text" class="form-input" placeholder="Your Name" required>
+                <input type="text" class="form-input" placeholder="Business Name" required>
+            </div>
+            <div class="form-row">
+                <input type="email" class="form-input" placeholder="Email Address" required>
+            </div>
+            <div class="form-row">
+                <select class="form-input" required>
+                    <option value="" disabled selected>What do you need?</option>
+                    <option value="web-design">Web Design & Development</option>
+                    <option value="branding">Branding & Brand Kit</option>
+                    <option value="setup">Digital Setup</option>
+                    <option value="support">Ongoing Support</option>
+                    <option value="full">Full Package</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn" onclick="event.preventDefault(); alert('Form submitted!');">Get My Free Quote</button>
+            <span class="form-note">Free quote · No commitment · Response within 24 hours</span>
+        </form>
+    </section>
+
+    <!-- SECTION 8: FOOTER -->
+    <footer>
+        <div class="footer-logo">North Drive Digital</div>
+        <div class="footer-copy">© 2026 North Drive Digital. Toronto, Ontario.</div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            function applySpanToFirstVisible() {
+                // Reset all span classes
+                portfolioItems.forEach(item => item.classList.remove('span-2'));
+                
+                // Find first visible item
+                const firstVisible = Array.from(portfolioItems).find(item => !item.classList.contains('hidden'));
+                
+                // Read apply span if window is wide enough (not mobile)
+                if (firstVisible && window.innerWidth > 768) {
+                    firstVisible.classList.add('span-2');
+                }
+            }
+
+            // Initial setup
+            applySpanToFirstVisible();
+
+            // Handle window resize dynamically to adjust classes
+            window.addEventListener('resize', applySpanToFirstVisible);
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    const filterValue = btn.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all') {
+                            item.classList.remove('hidden');
+                        } else {
+                            if (item.getAttribute('data-cat') === filterValue) {
+                                item.classList.remove('hidden');
+                            } else {
+                                item.classList.add('hidden');
+                            }
+                        }
+                    });
+                    
+                    // Reapply layout class
+                    applySpanToFirstVisible();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
