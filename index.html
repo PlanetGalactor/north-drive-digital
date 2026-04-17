@@ -206,7 +206,7 @@
             opacity: 0.8;
         }
 
-        .client-logo img {
+        .client-logo img, .client-logo svg {
             width: 100%;
             max-height: 36px;
             object-fit: contain;
@@ -369,6 +369,59 @@
         .stat-item { text-align: left; }
         .stat-val { font-family: var(--font-head); font-size: 16px; color: rgba(245,245,240,0.15); }
         .stat-lbl { font-family: var(--font-body); font-size: 8px; color: rgba(245,245,240,0.2); text-transform: uppercase; letter-spacing: 0.1em;}
+
+        /* Hover Illumination Effects */
+        .service-card {
+            transition: background-color 0.4s ease;
+        }
+        .service-card:hover {
+            background-color: #0c100c;
+        }
+        
+        .visual-wireframe rect, .visual-wireframe circle,
+        .visual-typography .typo-main, .visual-typography .swatch,
+        .icon-svg, .uptime-graph polyline, .icon-label, .uptime-status, .stat-val {
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .visual-wireframe rect {
+            fill: rgba(245,245,240,0.15);
+        }
+        .service-card:hover .visual-wireframe circle {
+            fill: rgba(245,245,240,0.25);
+        }
+        
+        .service-card:hover .visual-typography .typo-main {
+            color: rgba(245,245,240,0.8);
+            text-shadow: 0 0 12px rgba(245,245,240,0.2);
+            transform: scale(1.05);
+        }
+        .service-card:hover .visual-typography .swatch {
+            box-shadow: 0 0 10px rgba(245,245,240,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .service-card:hover .icon-svg {
+            opacity: 0.8;
+            stroke: #ffffff;
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+            transform: translateY(-4px);
+        }
+        .service-card:hover .icon-label {
+            color: rgba(245,245,240,0.6);
+        }
+
+        .service-card:hover .uptime-graph polyline {
+            stroke: rgba(120,255,120,0.8);
+            filter: drop-shadow(0 0 6px rgba(120,255,120,0.4));
+        }
+        .service-card:hover .uptime-status {
+            color: rgba(120,255,120,0.8);
+            text-shadow: 0 0 8px rgba(120,255,120,0.3);
+        }
+        .service-card:hover .stat-val {
+            color: rgba(245,245,240,0.6);
+        }
 
         /* --- SECTION 5: HOW IT WORKS --- */
         #process {
@@ -802,13 +855,27 @@
 
     <!-- SECTION 2: CLIENT LOGO STRIP -->
     <section id="logo-strip" class="fade-up">
-        <div class="client-logo"><img src="" alt="Collector Casing Logo"></div>
-        <div class="client-logo"><img src="" alt="Whitecroft Partners Logo"></div>
-        <div class="client-logo"><img src="" alt="BHRA Logo"></div>
-        <div class="client-logo"><img src="" alt="Menkes Logo"></div>
-        <div class="client-logo"><img src="" alt="Northern Elite Logo"></div>
-        <div class="client-logo"><img src="" alt="Chartwell Logo"></div>
-        <div class="client-logo"><img src="" alt="Forge Group Logo"></div>
+        <div class="client-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F5F5F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Collector Casing Logo"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <div class="client-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F5F5F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Whitecroft Partners Logo"><polyline points="2 6 8 20 12 12 16 20 22 6" /><line x1="12" y1="12" x2="12" y2="2" /></svg>
+        </div>
+        <div class="client-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F5F5F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="BHRA Logo"><path d="M4 22h16M7 22c0-4 3-7 5-7s5 3 5 7M12 15V5M9 8h6M10 5h4" /></svg>
+        </div>
+        <div class="client-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F5F5F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Menkes Logo"><path d="M3 21V9l4-4 4 4v12M11 21V5l4-4 4 4v16M15 13h4" /></svg>
+        </div>
+        <div class="client-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F5F5F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Northern Elite Logo"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9" /><circle cx="12" cy="12" r="3" /></svg>
+        </div>
+        <div class="client-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F5F5F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Chartwell Logo"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
+        </div>
+        <div class="client-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F5F5F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Forge Group Logo"><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M4 10l-2 8h20l-2-8M9 4v4M15 4v4" /></svg>
+        </div>
     </section>
 
     <!-- SECTION 3: PROBLEM STATEMENT -->
