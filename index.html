@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>North Drive Digital | Built to be seen.</title>
     <meta name="description" content="Toronto-based web design and branding agency for local businesses.">
+    <link rel="icon" type="image/png" href="images/logos/brand/ND-nmark-dark@4x.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,7 +95,9 @@
             position: absolute; top: 0; left: 0; width: 100%;
             padding: var(--s6) var(--s8); display: flex; justify-content: space-between; align-items: center; z-index: 10;
         }
-        .nav-logo { font-family: var(--f-display); font-weight: 800; font-size: 18px; letter-spacing: -0.5px; color: var(--t-100); white-space: nowrap; }
+        .nav-logo { display: flex; align-items: center; }
+        .nav-logo img { height: 24px; width: auto; display: block; opacity: 0.9; transition: opacity 0.2s ease; }
+        .nav-logo:hover img { opacity: 1; }
         .nav-links { display: flex; gap: var(--s5); }
         .nav-links a { font-family: var(--f-mono); font-size: 11px; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; color: var(--t-45); transition: color 0.15s; }
         .nav-links a:hover { color: var(--t-100); }
@@ -113,8 +116,12 @@
         }
         .hero-accent-rule { width: 40px; height: 4px; background-color: var(--green); margin-bottom: var(--s5); }
         .hero-headline {
-            font-family: var(--f-display); font-size: clamp(64px, 11vw, 150px); font-weight: 800;
-            line-height: 0.92; letter-spacing: -3px; color: var(--t-100); white-space: pre-line; margin-bottom: var(--s3);
+            margin-bottom: var(--s3);
+        }
+        .hero-logo {
+            height: clamp(140px, 25vw, 280px);
+            width: auto;
+            display: block;
         }
         .hero-tagline {
             font-family: var(--f-serif); font-size: clamp(24px, 3vw, 36px); font-weight: 400; font-style: italic;
@@ -217,6 +224,18 @@
 
         .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s4); }
         .portfolio-item { background: var(--surface); aspect-ratio: 4/3; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid var(--line); transition: background-color 0.3s ease; }
+        .portfolio-logo-img {
+            max-width: 55%;
+            max-height: 38%;
+            object-fit: contain;
+            opacity: 0.12;
+            filter: brightness(0) invert(1);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .portfolio-item:hover .portfolio-logo-img {
+            opacity: 0.03;
+            transform: scale(0.95);
+        }
         .portfolio-item.span-2 { grid-column: span 2; }
         .pt-placeholder-text { font-family: var(--f-display); font-size: 24px; font-weight: 700; color: var(--t-16); margin-bottom: var(--s2); letter-spacing: -0.5px; }
         .pt-add-screenshot { font-family: var(--f-mono); font-size: 10px; font-weight: 400; color: var(--t-16); letter-spacing: 0.5px; }
@@ -301,7 +320,9 @@
     <header id="hero">
         <div class="hero-overlay"></div>
         <nav>
-            <div class="nav-logo">North Drive Digital</div>
+            <a href="#" class="nav-logo">
+                <img src="images/logos/brand/ND-horiz-dark@4x.png" alt="North Drive Digital Logo">
+            </a>
             <div class="nav-links">
                 <a href="#portfolio">Work</a>
                 <a href="#services">Services</a>
@@ -311,7 +332,9 @@
         </nav>
         <div class="hero-content fade-up">
             <div class="hero-accent-rule"></div>
-            <h1 class="hero-headline">NORTH<br>DRIVE<br>DIGITAL</h1>
+            <h1 class="hero-headline">
+                <img class="hero-logo" src="images/logos/brand/ND-stack-dark@4x.png" alt="NORTH DRIVE DIGITAL">
+            </h1>
             <span class="hero-tagline">Built to be seen.</span>
             <a href="#quote" class="cta-button">Get a Free Quote</a>
         </div>
@@ -520,8 +543,7 @@
         <div class="portfolio-grid fade-up" style="transition-delay: 0.2s;" id="portfolio-grid">
             <!-- Item 1 -->
             <div class="portfolio-item" data-cat="full">
-                <div class="pt-client pt-placeholder-text">Northern Elite</div>
-                <div class="pt-add-screenshot">Add screenshot</div>
+                <img src="images/logos/northern-elite.png" alt="Northern Elite Logo" class="portfolio-logo-img">
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <div class="pt-client">Northern Elite</div>
@@ -535,8 +557,7 @@
             
             <!-- Item 2 -->
             <div class="portfolio-item" data-cat="website">
-                <div class="pt-client pt-placeholder-text">BHRA</div>
-                <div class="pt-add-screenshot">Add screenshot</div>
+                <img src="images/logos/bhra.png" alt="BHRA Logo" class="portfolio-logo-img">
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <div class="pt-client">BHRA</div>
@@ -550,8 +571,7 @@
             
             <!-- Item 3 -->
             <div class="portfolio-item" data-cat="full">
-                <div class="pt-client pt-placeholder-text">Collector Casing</div>
-                <div class="pt-add-screenshot">Add screenshot</div>
+                <img src="images/logos/collector-casing.png" alt="Collector Casing Logo" class="portfolio-logo-img">
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <div class="pt-client">Collector Casing</div>
@@ -565,8 +585,7 @@
             
             <!-- Item 4 -->
             <div class="portfolio-item" data-cat="branding">
-                <div class="pt-client pt-placeholder-text">Whitecroft Partners</div>
-                <div class="pt-add-screenshot">Add screenshot</div>
+                <img src="images/logos/whitecroft-partners.png" alt="Whitecroft Partners Logo" class="portfolio-logo-img">
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <div class="pt-client">Whitecroft Partners</div>
@@ -580,8 +599,7 @@
             
             <!-- Item 5 -->
             <div class="portfolio-item" data-cat="website">
-                <div class="pt-client pt-placeholder-text">Menkes</div>
-                <div class="pt-add-screenshot">Add screenshot</div>
+                <img src="images/logos/menkes.png" alt="Menkes Logo" class="portfolio-logo-img">
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <div class="pt-client">Menkes</div>
@@ -595,8 +613,7 @@
             
             <!-- Item 6 -->
             <div class="portfolio-item" data-cat="website">
-                <div class="pt-client pt-placeholder-text">Forge Group</div>
-                <div class="pt-add-screenshot">Add screenshot</div>
+                <img src="images/logos/forge-group.png" alt="Forge Group Logo" class="portfolio-logo-img">
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <div class="pt-client">Forge Group</div>
@@ -640,7 +657,9 @@
 
     <!-- SECTION 8: FOOTER -->
     <footer>
-        <div class="footer-logo">North Drive Digital</div>
+        <div class="footer-logo">
+            <img src="images/logos/brand/ND-horiz-dark@4x.png" alt="North Drive Digital Logo" style="height: 20px; width: auto; display: block;">
+        </div>
         <div class="footer-tagline">Built to be seen.</div>
         <div class="footer-copy">© 2026 North Drive Digital. Toronto, Ontario.</div>
     </footer>
