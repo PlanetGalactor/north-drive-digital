@@ -81,15 +81,15 @@
         #hero {
             position: relative;
             width: 100%;
-            height: 100vh;
-            min-height: 800px;
+            min-height: 100vh;
             background: #060806;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            padding-bottom: 60px;
+            padding-top: 140px;
+            padding-bottom: var(--s6);
         }
         .hero-overlay {
             position: absolute; inset: 0;
@@ -181,7 +181,7 @@
             flex-direction: column;
             align-items: center;
             padding: 0 var(--s5);
-            margin-top: -40px;
+            margin-top: 0;
         }
         .hero-title {
             font-family: var(--f-display);
@@ -277,8 +277,9 @@
 
         /* --- SECTION 1B: HERO MARQUEE --- */
         .marquee-container {
-            position: absolute;
-            bottom: var(--s6);
+            position: relative;
+            margin-top: auto;
+            padding-top: var(--s6);
             left: 0;
             width: 100%;
             overflow: hidden;
@@ -561,20 +562,22 @@
 </head>
 <body>
 
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <a href="#" class="nav-logo">
+            <img src="images/logos/brand/ND-horiz-dark@4x.png" alt="North Drive Digital Logo">
+        </a>
+        <div class="nav-links">
+            <a href="#portfolio">Work</a>
+            <a href="#services">Services</a>
+            <a href="#process">About</a>
+        </div>
+        <a href="#quote" class="cta-button ghost header-cta">Get in Touch</a>
+    </nav>
+
     <!-- SECTION 1: HERO -->
     <header id="hero">
         <div class="hero-overlay"></div>
-        <nav>
-            <a href="#" class="nav-logo">
-                <img src="images/logos/brand/ND-horiz-dark@4x.png" alt="North Drive Digital Logo">
-            </a>
-            <div class="nav-links">
-                <a href="#portfolio">Work</a>
-                <a href="#services">Services</a>
-                <a href="#process">About</a>
-            </div>
-            <a href="#quote" class="cta-button ghost header-cta">Get in Touch</a>
-        </nav>
         <div class="hero-content">
             <h1 class="hero-title">
                 <span class="word" style="--d: 0.1s">North</span>
